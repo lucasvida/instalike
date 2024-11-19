@@ -24,13 +24,11 @@
   },
   "contributors": [],
   "scripts": {
+    "start": "node server.js"
     "dev": "",
     "test": ""
   },
   "dependencies": {
     "express": "^4.21.1"
-  },
-  "scripts": {
-  "start": "node server.js"
   }
 }
