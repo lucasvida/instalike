@@ -1,5 +1,7 @@
 import express from "express";
+//Importa o uso de CORS
 import cors from "cors";
+
 
 const posts = [
   {
@@ -37,17 +39,17 @@ const posts = [
 const app = express();
 app.use(express.json());
 // Configurar o CORS
-app.use(cors({
-  origin: "*" 
-}));
-
+app.use(cors({origin: "*" }));
 // Middleware para entender dados enviados via URL-encoded
 app.use(express.urlencoded({ extended: true }));
+//Define a pasta estatica pública
+app.use(express.static("public"));
 
-
+//Verifica a inicialização do servidor.
 app.listen(3001, () => {
   console.log("Servidor Escutando");
 });
+
 
 app.get("/api", (req, res) => {
   res.status(200).send("Olá, mundo!");
