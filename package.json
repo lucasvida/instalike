@@ -18,18 +18,19 @@
   "bugs": "",
   "keywords": [],
   "author": {
-    "name": "",
-    "email": "",
+    "name": "Lucas Vida",
+    "email": "contato@lucasvida.com",
     "url": ""
   },
   "contributors": [],
   "scripts": {
     "start": "node server.js",
-    "dev": "",
+    "dev": "node --watch --env-file=.env server.js",
     "test": ""
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "mongodb": "^6.10.0"
   }
 }

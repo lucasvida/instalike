@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instalike</title>
 </head>
+
 <body>
     <div class="post">
 
     </div>
     <script>
         const posts = document.querySelector('.post');
-        const endPoint = "http://localhost:3001/post";
+        const endPoint = "http://localhost:3001/posts";
 
         fetch(endPoint)
-        .then((response)=> response.json())
-        .then((data)=>{
-            const { id, descricao, imagem } = data;
-            posts.innerHTML = `<img src="${imagem}"><p>${descricao}</p>`;
-            console.log(data);
-        })
+            .then((response) => response.json())
+            .then((data) => {
+                const { id, descricao, imagem } = data;
+                posts.innerHTML = `<img src="${imagem}"><p>${descricao}</p>`;
+                console.log(data);
+            })
     </script>
 </body>
+
 </html>
