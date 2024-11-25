@@ -17,7 +17,8 @@ app.use(cors({ origin: "*" }));
 // Middleware para entender dados enviados via URL-encoded
 app.use(express.urlencoded({ extended: true }));
 //Define a pasta estatica pública
-app.use(express.static("public"));
+// app.use(express.static("public"));
+app.use(express.static("uploads"));
 
 app.get("/api", (req, res) => {
   res.status(200).send("Olá, mundo!");
