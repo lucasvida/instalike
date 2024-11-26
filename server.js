@@ -1,10 +1,9 @@
 import express from "express";
-//Importa o uso de CORS
-import cors from "cors";
 import routes from "./src/routes/postsRoutes.js";
 //Importa Rotas do Servidor
 
 const app = express();
+app.use(express.static("uploads"));
 routes(app);
 
 //Verifica a inicialização do servidor.
@@ -12,13 +11,10 @@ app.listen(3001, () => {
   console.log("Servidor Escutando");
 });
 
-// Configurar o CORS
-app.use(cors({ origin: "*" }));
 // Middleware para entender dados enviados via URL-encoded
 app.use(express.urlencoded({ extended: true }));
 //Define a pasta estatica pública
 // app.use(express.static("public"));
-app.use(express.static("uploads"));
 
 app.get("/api", (req, res) => {
   res.status(200).send("Olá, mundo!");
